@@ -21,6 +21,8 @@ estimate_mu<-function(Y,D,X,inds.train,inds.eval,method="DSRR",...) {
     
     # ==== estimate E(Y|D,X)
     
+    K=5
+    
     #result=CVr(y1,x1,K)
     #ropt=result[[1]]
     
@@ -122,7 +124,7 @@ estimate_ps<-function(D,X,inds.train,inds.eval,method="DSRR",...){
     # x = X[inds.train.set[[1]],]
     # d = D[inds.train.set[[1]]]
     
-    #K=5
+    K=5
     
     #result=CVr(d,x,K)
     #ropt=result[[1]]

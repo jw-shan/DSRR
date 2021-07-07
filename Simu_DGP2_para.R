@@ -35,16 +35,12 @@ p <- 100
 nsim <- 500
 truevalue <- 1
 
-cl <- makeCluster(50)
+cl <- makeCluster(20)
 clusterExport(cl,ls())
 
 print("Start!")
 
 est_fun <- function(count){
-  
-  if (count%%50==0) {
-    print(count)
-  }
   
   library(hdm)
   library(randomForest)
@@ -107,7 +103,7 @@ est_fun <- function(count){
 
 
 est  <- parSapply(cl,1:nsim,est_fun)
-save.image("simu_para.RData")
+save.image("simu_para2.RData")
 
 result <- matrix(nrow = 1, ncol = 4)
 colnames(result)<-c("bias","stdev","RMSE","CR")
@@ -131,7 +127,7 @@ CR <- coverage_rate
 result <- cbind(bias,stdev,rmse,CR)
 
 result
-save.image("simu_para.RData")
+save.image("simu_para2.RData")
 
 
 
