@@ -31,11 +31,11 @@ library(parallel)
 # generate data
 # SEED <- 2
 n <- 3000
-p <- 100
-nsim <- 500
+p <- 50
+nsim <- 100
 truevalue <- 1
 
-cl <- makeCluster(20)
+cl <- makeCluster(50)
 clusterExport(cl,ls())
 
 print("Start!")
@@ -103,7 +103,7 @@ est_fun <- function(count){
 
 
 est  <- parSapply(cl,1:nsim,est_fun)
-save.image("simu_para2.RData")
+save.image("simu_para3.RData")
 
 result <- matrix(nrow = 1, ncol = 4)
 colnames(result)<-c("bias","stdev","RMSE","CR")
@@ -127,7 +127,7 @@ CR <- coverage_rate
 result <- cbind(bias,stdev,rmse,CR)
 
 result
-save.image("simu_para2.RData")
+save.image("simu_para3.RData")
 
 
 

@@ -29,10 +29,10 @@ estimate_mu<-function(Y,D,X,inds.train,inds.eval,method="DSRR",...) {
     ropt=2
     r=2
     
-    result=CVlam(y1,x1,ropt,K)
-    lamopt=result[[1]]
+    # result=CVlam(y1,x1,ropt,K)
+    # lamopt=result[[1]]
     
-    # lamopt=1000
+    lamopt=1000
     
     result=estimationBini(y1,x1,ropt)
     Biniy1=result[[1]]
@@ -65,10 +65,10 @@ estimate_mu<-function(Y,D,X,inds.train,inds.eval,method="DSRR",...) {
     #result=CVr(y0,x0,K)
     #ropt=result[[1]]
     
-    result=CVlam(y0,x0,ropt,K)
-    lamopt=result[[1]]
+    # result=CVlam(y0,x0,ropt,K)
+    # lamopt=result[[1]]
     
-    # lamopt=500
+    lamopt=500
     
     
     result=estimationBini(y0,x0,ropt)
@@ -131,10 +131,10 @@ estimate_ps<-function(D,X,inds.train,inds.eval,method="DSRR",...){
     ropt=2
     r=2
     
-    result=CVlam(d,x,ropt,K)
-    lamopt=result[[1]]
+    # result=CVlam(d,x,ropt,K)
+    # lamopt=result[[1]]
     
-    # lamopt=220
+    lamopt=220
     
     result=estimationBini(d,x,ropt)
     Bini=result[[1]] #初始值V(0)
